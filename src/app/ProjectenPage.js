@@ -176,8 +176,8 @@ export default function ProjectenPage() {
 
       {/* Overlay voor uitvergroot project */}
       {openIdx !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-auto">
-          <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-8 max-w-full w-full sm:max-w-4xl mx-2 sm:mx-4 relative animate-fadeIn">
+         <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 overflow-auto py-8">
+            <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-8 max-w-full w-full sm:max-w-4xl mx-2 sm:mx-4 relative animate-fadeIn">
             <button
                 onClick={() => setOpenIdx(null)}
                 className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 text-gray-500 hover:text-blue-700 text-3xl sm:text-2xl font-bold bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow-md border border-gray-200"
