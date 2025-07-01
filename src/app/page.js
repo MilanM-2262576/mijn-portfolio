@@ -135,9 +135,15 @@ function ProjectenPage() {
       finished: true,
     },
     {
-
+      titel: "Portfolio website",
+      tags: ["Javascript", "HTML", "React"],
+      korteBeschrijving: "Portfolio website",
+      beschrijving: `De website waarop je nu zit. Eenvoudige website die een overzicht geeft van al mijn lopende/afgeronde projecten`,
+      bullets: [],
+      github: "https://github.com/MilanM-2262576/mijn-portfolio",
+      youtube: "",
+      finished: true,
     },
-
     // Voeg meer projecten toe...
   ];
 
