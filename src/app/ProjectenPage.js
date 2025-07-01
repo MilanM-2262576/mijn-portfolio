@@ -127,11 +127,11 @@ export default function ProjectenPage() {
       <h1 className="text-3xl font-bold mb-8 text-blue-700">Mijn Projecten</h1>
 
       <h2 className="text-2xl font-bold mt-4 mb-2 text-green-700">Afgerond</h2>
-      <div className="flex flex-wrap gap-6 justify-center w-full">
+     <div className="flex flex-wrap gap-6 justify-center w-full">
         {finished.map((project, idx) => (
           <div
             key={project.titel}
-            className="bg-white rounded-lg shadow-lg p-6 cursor-pointer transition-all duration-300 border border-blue-100 hover:scale-105 w-96"
+            className="bg-white rounded-lg shadow-lg p-6 cursor-pointer transition-all duration-300 border border-blue-100 hover:scale-105 w-full max-w-xs sm:max-w-sm md:w-96"
             onClick={() => setOpenIdx(projecten.indexOf(project))}
           >
             <h2 className="text-xl font-semibold text-blue-700 mb-2 flex items-center gap-2">
@@ -151,11 +151,11 @@ export default function ProjectenPage() {
       </div>
 
       <h2 className="text-2xl font-bold mt-8 mb-2 text-orange-600">Niet afgerond</h2>
-      <div className="flex flex-wrap gap-6 justify-center w-full">
+       <div className="flex flex-wrap gap-6 justify-center w-full">
         {notFinished.map((project, idx) => (
           <div
             key={project.titel}
-            className="bg-white rounded-lg shadow-lg p-6 cursor-pointer transition-all duration-300 border border-blue-100 hover:scale-105 w-96"
+            className="bg-white rounded-lg shadow-lg p-6 cursor-pointer transition-all duration-300 border border-blue-100 hover:scale-105 w-full max-w-xs sm:max-w-sm md:w-96"
             onClick={() => setOpenIdx(projecten.indexOf(project))}
           >
             <h2 className="text-xl font-semibold text-blue-700 mb-2 flex items-center gap-2">
@@ -177,15 +177,15 @@ export default function ProjectenPage() {
       {/* Overlay voor uitvergroot project */}
       {openIdx !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-auto">
-          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-4xl w-full mx-4 relative animate-fadeIn">
+          <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-8 max-w-full w-full sm:max-w-4xl mx-2 sm:mx-4 relative animate-fadeIn">
             <button
-              onClick={() => setOpenIdx(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-blue-700 text-2xl font-bold"
-              aria-label="Sluiten"
-            >
-              &times;
+                onClick={() => setOpenIdx(null)}
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 text-gray-500 hover:text-blue-700 text-3xl sm:text-2xl font-bold bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow-md border border-gray-200"
+                aria-label="Sluiten"
+                >
+                &times;
             </button>
-            <h2 className="text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-blue-700 mb-4 flex items-center gap-2 flex-wrap">
               {projecten[openIdx].titel}
               {projecten[openIdx].tags && projecten[openIdx].tags.map((tag, i) => (
                 <span
@@ -196,11 +196,11 @@ export default function ProjectenPage() {
                 </span>
               ))}
             </h2>
-            <p className="mb-4 text-gray-800">{projecten[openIdx].beschrijving}</p>
+            <p className="mb-4 text-gray-800 text-sm sm:text-base">{projecten[openIdx].beschrijving}</p>
             {/* Bullet points*/}
             {projecten[openIdx].bullets && (
               <div className="mb-4">
-                <ul className="list-disc list-inside text-gray-700 text-sm">
+                <ul className="list-disc list-inside text-gray-700 text-xs sm:text-sm">
                   {projecten[openIdx].bullets.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
@@ -219,29 +219,28 @@ export default function ProjectenPage() {
               {/* YouTube video indien aanwezig */}
               {projecten[openIdx].youtube && (
                 <div className="w-full flex justify-center">
-                  <iframe
-                    width="720"
-                    height="405"
-                    src={projecten[openIdx].youtube}
-                    title="YouTube video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="rounded-xl border max-w-full"
-                    style={{ maxWidth: "100%" }}
-                  ></iframe>
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      src={projecten[openIdx].youtube}
+                      title="YouTube video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full rounded-xl border"
+                    ></iframe>
+                  </div>
                 </div>
               )}
               {/* Foto's indien aanwezig */}
               {projecten[openIdx].fotos && projecten[openIdx].fotos.length > 0 && (
-                <div className="flex gap-4 flex-wrap justify-center">
+                <div className="flex gap-2 flex-wrap justify-center">
                   {projecten[openIdx].fotos.map((foto, i) => (
                     <img
                       key={i}
                       src={foto}
                       alt={`Screenshot ${i + 1}`}
                       className="rounded border max-w-full h-auto"
-                      style={{ maxHeight: "500px", objectFit: "contain" }}
+                      style={{ maxHeight: "250px", objectFit: "contain" }}
                     />
                   ))}
                 </div>
