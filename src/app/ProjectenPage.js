@@ -23,7 +23,7 @@ export default function ProjectenPage() {
       fotos: [
         
       ],
-      youtube: "https://www.youtube.com/embed/aVNPC2o-Z88",
+      youtube: "https://www.youtube.com/embed/GlYGgni5DZ8",
       finished: true,
     },
     {
@@ -108,7 +108,9 @@ export default function ProjectenPage() {
       titel: "Portfolio website",
       tags: ["Javascript", "HTML", "React"],
       korteBeschrijving: "Portfolio website",
-      beschrijving: `De website waarop je nu zit. Eenvoudige website die een overzicht geeft van al mijn lopende/afgeronde projecten`,
+      beschrijving: `De website waarop je nu zit. Eenvoudige website die een overzicht geeft van al mijn lopende/afgeronde projecten
+        deze is zeer snel in elkaar gestoken zonder al te veel complexiteit.  
+      `,
       bullets: [],
       github: "https://github.com/MilanM-2262576/mijn-portfolio",
       youtube: "",
@@ -123,7 +125,7 @@ export default function ProjectenPage() {
   const notFinished = projecten.filter(p => !p.finished);
 
   return (
-    <section className="flex flex-col items-center w-full">
+    <section className="flex flex-col items-center w-full pb-20">
       <h1 className="text-3xl font-bold mb-8 text-blue-700">Mijn Projecten</h1>
 
       <h2 className="text-2xl font-bold mt-4 mb-2 text-green-700">Afgerond</h2>
