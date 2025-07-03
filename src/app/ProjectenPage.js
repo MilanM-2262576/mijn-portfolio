@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ProjectenPage() {
   const projecten = [
@@ -125,8 +126,17 @@ export default function ProjectenPage() {
   const notFinished = projecten.filter(p => !p.finished);
 
   return (
-    <section className="flex flex-col items-center w-full pb-20">
-      <h1 className="text-3xl font-bold mb-8 text-blue-700">Mijn Projecten</h1>
+     <section className="flex flex-col items-center w-full pb-20">
+      <motion.h1
+        className="text-4xl sm:text-5xl font-extrabold mb-10 text-blue-700 text-center tracking-tight drop-shadow-lg"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, type: "spring" }}
+      >
+        <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
+          Mijn Projecten
+        </span>
+      </motion.h1>
 
       <h2 className="text-2xl font-bold mt-4 mb-2 text-green-700">Afgerond</h2>
      <div className="flex flex-wrap gap-6 justify-center w-full">
