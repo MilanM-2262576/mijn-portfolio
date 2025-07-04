@@ -1,14 +1,16 @@
 "use client";
 import { useState } from "react";
-import { FaFolderOpen, FaGraduationCap, FaUser } from "react-icons/fa";
+import { FaFolderOpen, FaGraduationCap, FaUser, FaBriefcase} from "react-icons/fa";
 import OverMijPage from "./OverMijPage";
 import ProjectenPage from "./ProjectenPage";
 import StudiePage from "./StudiePage";
+import FreelancePage from "./FreelancePage";
 
 const navItems = [
   { icon: <FaFolderOpen size={28} />, label: "Mijn Projecten" },
   { icon: <FaGraduationCap size={28} />, label: "Mijn Studie" },
   { icon: <FaUser size={28} />, label: "Over Mij" },
+  { icon: <FaBriefcase size={28} />, label: "Freelancing" },
 ];
 
 function SidebarNav({ current, setCurrent }) {
@@ -59,6 +61,7 @@ export default function HomePage() {
         {current === 0 && <ProjectenPage />}
         {current === 1 && <StudiePage />}
         {current === 2 && <OverMijPage onBekijkProjecten={() => setCurrent(0)} />}
+        {current === 3 && <FreelancePage />}
       </main>
     </div>
   );
