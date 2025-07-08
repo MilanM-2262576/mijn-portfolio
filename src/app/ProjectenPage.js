@@ -51,13 +51,14 @@ export default function ProjectenPage() {
       titel: "Block jump",
       tags: ["Dart", "Flutter"],
       korteBeschrijving: "Mobile platformer game",
-      beschrijving: `Je springt als blok heletijd omhoog via platformen door swipe bewegingen te doen, hoe hoger men geraakt hoe hoger de score maar hoe
-        moeilijker het wordt. 
-        NOG NIET AF
-      `,
+      beschrijving: `Block Jump is een mobiele platformgame ontwikkeld met Flutter, waarin je als speler een blok bestuurt dat steeds hoger probeert te springen via verschillende soorten platformen. Door omhoog te swipen spring je naar het volgende platform, waarbij het spel steeds uitdagender wordt naarmate je hoger komt. Er zijn diverse soorten platformen, zoals bewegende, schuine en booster-platformen die je extra hoog laten springen. Je kunt verschillende skins vrijspelen en je score wordt bepaald door hoe hoog je geraakt. Het spel is ontworpen voor snelle, korte speelsessies en bevat eenvoudige maar kleurrijke graphics.`,
       bullets: [
           "Besturing en gameplay: omhoog swipen om te springen",
+          "Skins: er zijn verschillende skins waaruit men kan kiezen",
           "Score: elk platformer omhoog is +1 ",
+          "Booster platformen: deze schieten je de lucht in",
+          "Moving platformen: deze bewegen voordurend",
+          "Schuine platformen: hier kan men van afglijden"
       ],
       github: "https://github.com/MilanM-2262576/BlockJump",
       fotos: [
