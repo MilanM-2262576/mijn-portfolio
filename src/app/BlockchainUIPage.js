@@ -34,7 +34,7 @@ export default function BlockchainUIPage() {
     const newTransactions = [
       { sender, recipient, amount: Number(amount) }
     ];
-    fetch("http://127.0.0.1:8080/add_block", {
+    fetch("http://milanmuroni.be/add_block", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTransactions),
@@ -63,7 +63,7 @@ export default function BlockchainUIPage() {
             <button
               className="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition font-semibold shadow"
               onClick={() => {
-                fetch("http://127.0.0.1:8080/is_valid")
+                fetch("http://milanmuroni.be/is_valid")
                   .then(res => res.json())
                   .then(isValid => {
                     if (isValid) {
