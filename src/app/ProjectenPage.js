@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import BlockchainUIPage from "./BlockchainUIPage"; 
 
 export default function ProjectenPage() {
   const projecten = [
@@ -118,11 +119,34 @@ export default function ProjectenPage() {
       youtube: "",
       finished: true,
     },
+    {
+      titel: "mini-blockchain",
+      tags: ["Rust"],
+      korteBeschrijving: "Eenvoudige blockchain implementatie",
+      beschrijving: `Een minimalistische blockchain gebouwd in Rust als oefenproject om de basisprincipes van blockchaintechnologie te begrijpen.
+        De implementatie bevat blokken met hashes, proof-of-work, en een eenvoudige peer-to-peer communicatie via HTTP requests.
+        Het project demonstreert hoe transacties worden toegevoegd, blokken worden gemined en de keten wordt gevalideerd.
+        Men kan via de UI op deze website de blockchain visualeren en ermee interacten`,
+      bullets: [
+        "Blokken met hash, timestamp, data en vorige hash",
+        "Proof-of-work algoritme (instelbare moeilijkheid)",
+        "Eenvoudige REST API met actix-web voor interactie",
+        "UI om te blockchain te visualiseren",
+      ],
+      github: "",
+      youtube: "",
+      finished: true,
+    },
     // Voeg meer projecten toe...
   ];
 
+  const [showBlockchainUI, setShowBlockchainUI] = useState(false);
   const [openIdx, setOpenIdx] = useState(null);
 
+  if (showBlockchainUI) {
+    return <BlockchainUIPage onBack={() => setShowBlockchainUI(false)} />;
+  }
+  
   const finished = projecten.filter(p => p.finished);
   const notFinished = projecten.filter(p => !p.finished);
 
@@ -228,6 +252,18 @@ export default function ProjectenPage() {
             >
               Bekijk op GitHub
             </a>
+            {/* Extra knop voor mini-blockchain UI */}
+            {projecten[openIdx].titel === "mini-blockchain" && (
+              <button
+                onClick={() => {
+                  setOpenIdx(null); // Sluit de modal
+                  setShowBlockchainUI(true); // Toon de blockchain UI
+                }}
+                className="inline-block mb-4 ml-4 px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition"
+              >
+                Open Blockchain UI
+              </button>
+            )}
             <div className="flex flex-col gap-4 mb-6">
               {/* YouTube video indien aanwezig */}
               {projecten[openIdx].youtube && (
