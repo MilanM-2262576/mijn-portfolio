@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import BlockchainUIPage from "./BlockchainUIPage"; 
+import BlockchainUIPage from "./blockchain/BlockchainUIPage"; 
 
 export default function ProjectenPage() {
   const projecten = [
