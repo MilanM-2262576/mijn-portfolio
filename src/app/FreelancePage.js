@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { FaBriefcase, FaLightbulb, FaComments, FaCode, FaRocket, FaCheckCircle, FaInfoCircle } from "react-icons/fa";
+import { FaBriefcase, FaLightbulb, FaComments, FaCode, FaRocket, FaCheckCircle, FaInfoCircle, FaEuroSign } from "react-icons/fa";
 
 export default function FreelancePage() {
   const [showInfo, setShowInfo] = useState(false);
+  const [showPriceInfo, setShowPriceInfo] = useState(false);
 
   return (
     <section className="flex flex-col items-center w-full min-h-screen bg-gradient-to-br from-blue-950 via-gray-950 to-purple-950">
@@ -15,6 +16,41 @@ export default function FreelancePage() {
           <FaBriefcase />
           Website Ontwikkeling
         </button>
+      </div>
+
+      {/* Prijs badge + info knop */}
+      <div className="flex items-center gap-3 mb-4 relative">
+        <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 font-bold px-5 py-2 rounded-full shadow-lg text-lg sm:text-2xl animate-bounce">
+          <span className="text-2xl sm:text-3xl font-extrabold">+/- €300</span> voor je website!
+        </span>
+        <button
+          onClick={() => setShowPriceInfo((v) => !v)}
+          className={`ml-2 text-green-600 hover:text-green-800 transition-colors focus:outline-none animate-bounce ${showPriceInfo ? "animate-none" : ""}`}
+          aria-label="Prijsopbouw info"
+          type="button"
+        >
+          <FaInfoCircle className="text-xl sm:text-2xl drop-shadow" />
+        </button>
+        {/* Info popup animatie */}
+        {showPriceInfo && (
+          <div className="absolute left-1/2 top-14 -translate-x-1/2 w-[340px] sm:w-[400px] bg-white border border-green-200 rounded-xl shadow-2xl p-5 z-30 animate-fadeIn">
+            <div className="flex items-center gap-2 mb-2">
+              <FaEuroSign className="text-green-500" />
+              <span className="font-bold text-green-700">Prijsopbouw van €300</span>
+            </div>
+            <div className="bg-green-50 border border-green-100 rounded-lg p-3 mb-2 text-green-800 text-xs sm:text-sm">
+              <span className="font-semibold">Let op:</span> <br />
+              <span>
+                <span className="font-bold">Een eenvoudige, statische website</span> (zoals een visitekaartje of portfolio) valt meestal binnen dit tarief.<br />
+                <span className="font-bold">Wil je meer pagina’s, dynamische functies</span> Dan wordt de prijs in overleg aangepast. <br />
+                <span className="font-bold">Fullstack website? </span> Dan loopt de prijs op tot +/- €700
+              </span>
+            </div>
+            <p className="text-xs text-green-700">
+              Alles inbegrepen: van eerste gesprek tot livegang en nazorg. Geen verborgen kosten!
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Content */}

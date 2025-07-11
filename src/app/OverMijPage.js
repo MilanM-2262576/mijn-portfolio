@@ -69,7 +69,7 @@ export default function OverMijPage({ onBekijkProjecten }) {
         >
           <h3 className="text-xl sm:text-2xl font-bold text-blue-700 mb-4 text-center">Meer over mij</h3>
           <p className="text-gray-800 text-center mb-4 text-sm sm:text-base">
-            Ik ben een gepassioneerde student informatica aan UHasselt met een grote interesse in softwareontwikkeling, algoritmes en creatieve technologieën.
+            Ik ben Milan Muroni een 21 jarige gepassioneerde student informatica aan UHasselt met een grote interesse in softwareontwikkeling, algoritmes en creatieve technologieën.
             <br /><br />
             Ik werk graag aan persoonlijke projecten, leer graag nieuwe programmeertalen en frameworks, en verdiep ik me in onderwerpen zoals AI, graphics, webontwikkeling....
             <br /><br />
