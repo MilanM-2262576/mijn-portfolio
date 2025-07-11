@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function BlockchainUIPage() {
+  const API_BASE = "https://mini-blockchain.onrender.com";
+
   const [chain, setChain] = useState([]);
   const [selectedBlock, setSelectedBlock] = useState(null);
   const [showValidPopup, setShowValidPopup] = useState(false);
@@ -15,7 +17,7 @@ export default function BlockchainUIPage() {
 
   // Blockchain ophalen
   useEffect(() => {
-    fetch("http://milanmuroni.be")   //fetch("http://127.0.0.1:8080/chain")
+    fetch(`${API_BASE}/chain`)   //fetch("http://127.0.0.1:8080/chain")
       .then((res) => res.json())
       .then((data) => setChain(data));
   }, []);
@@ -34,7 +36,7 @@ export default function BlockchainUIPage() {
     const newTransactions = [
       { sender, recipient, amount: Number(amount) }
     ];
-    fetch("http://milanmuroni.be/add_block", {
+    fetch(`${API_BASE}/add_block`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTransactions),
@@ -63,7 +65,7 @@ export default function BlockchainUIPage() {
             <button
               className="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition font-semibold shadow"
               onClick={() => {
-                fetch("http://milanmuroni.be/is_valid")
+                fetch(`${API_BASE}/is_valid`)
                   .then(res => res.json())
                   .then(isValid => {
                     if (isValid) {
