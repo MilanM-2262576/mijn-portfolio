@@ -21,7 +21,7 @@ export default function FreelancePage() {
       {/* Prijs badge + info knop */}
       <div className="flex items-center gap-3 mb-4 relative">
         <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 font-bold px-5 py-2 rounded-full shadow-lg text-lg sm:text-2xl animate-bounce">
-          <span className="text-2xl sm:text-3xl font-extrabold">+/- €300</span> voor je website!
+          <span className="text-2xl sm:text-3xl font-extrabold">+/- €250</span> voor je website!
         </span>
         <button
           onClick={() => setShowPriceInfo((v) => !v)}
@@ -62,7 +62,7 @@ export default function FreelancePage() {
           <p className="text-gray-200 text-center max-w-xl sm:max-w-2xl mb-8 sm:mb-12 text-base sm:text-lg">
             Wil je een goedkope, snelle en moderne website? Hieronder lees je stap voor stap hoe ik jouw project aanpak – transparant, gestructureerd en met oog voor kwaliteit!
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full max-w-4xl">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-4xl">
             {/* Stap 1 */}
             <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center border-t-4 border-blue-400 hover:scale-105 transition-transform duration-300">
               <FaLightbulb className="text-yellow-400 text-3xl sm:text-4xl mb-3 sm:mb-4" />
@@ -72,23 +72,15 @@ export default function FreelancePage() {
               </p>
             </div>
             {/* Stap 2 */}
-            <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center border-t-4 border-purple-400 hover:scale-105 transition-transform duration-300">
-              <FaComments className="text-purple-400 text-3xl sm:text-4xl mb-3 sm:mb-4" />
-              <h2 className="text-base sm:text-xl font-bold mb-1 sm:mb-2 text-blue-900 text-center">2. Voorstel & Design</h2>
-              <p className="text-gray-700 text-center text-xs sm:text-base">
-                Je ontvangt een visueel ontwerp (wireframe/mockup) en een duidelijke offerte. We stemmen samen af tot alles naar wens is.
-              </p>
-            </div>
-            {/* Stap 3 */}
             <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center border-t-4 border-green-400 hover:scale-105 transition-transform duration-300">
               <FaCode className="text-green-400 text-3xl sm:text-4xl mb-3 sm:mb-4" />
-              <h2 className="text-base sm:text-xl font-bold mb-1 sm:mb-2 text-blue-900 text-center">3. Ontwikkeling</h2>
+              <h2 className="text-base sm:text-xl font-bold mb-1 sm:mb-2 text-blue-900 text-center">2. Ontwikkeling</h2>
               <p className="text-gray-700 text-center text-xs sm:text-base">
                 Ik bouw de website met moderne technieken (React, Next.js, Tailwind CSS). Je krijgt tussentijds previews en kunt feedback geven.
               </p>
             </div>
-            {/* Stap 4 */}
-            <div className={`bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center border-t-4 border-pink-400 hover:scale-105 transition-transform duration-300 relative ${showInfo ? "sm:row-span-2" : ""}`}>
+            {/* Stap 3 */}
+            <div className={`bg-white rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center border-t-4 border-pink-400 hover:scale-105 transition-transform duration-300 relative`}>
               {/* Info knop rechtsboven */}
               <button
                 onClick={() => setShowInfo((v) => !v)}
@@ -102,7 +94,7 @@ export default function FreelancePage() {
               <div className="flex items-center gap-2 mb-1 w-full justify-center">
                 <FaRocket className="text-pink-400 text-3xl sm:text-4xl" />
               </div>
-              <h2 className="text-base sm:text-xl font-bold mb-1 sm:mb-2 text-blue-900 text-center">4. Oplevering & Nazorg</h2>
+              <h2 className="text-base sm:text-xl font-bold mb-1 sm:mb-2 text-blue-900 text-center">3. Oplevering & Nazorg</h2>
               <p className="text-gray-700 text-center text-xs sm:text-base mb-2">
                 Na jouw akkoord wordt de site live gezet. Je krijgt uitleg, documentatie en ik bied support voor vragen of kleine aanpassingen.
               </p>

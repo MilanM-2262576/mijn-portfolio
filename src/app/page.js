@@ -60,7 +60,12 @@ export default function HomePage() {
       <main className="flex-1 flex flex-col items-center justify-center">
         {current === 0 && <ProjectenPage />}
         {current === 1 && <StudiePage />}
-        {current === 2 && <OverMijPage onBekijkProjecten={() => setCurrent(0)} />}
+        {current === 2 && (
+          <OverMijPage
+            onBekijkProjecten={() => setCurrent(0)}
+            onBekijkFreelance={() => setCurrent(3)}
+          />
+        )}
         {current === 3 && <FreelancePage />}
       </main>
     </div>
